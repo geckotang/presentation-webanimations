@@ -13,6 +13,8 @@
 2014/06/10時点だと、Canaryで動く
 - Chrome 36以外でも使いたい場合は[Polyfill](https://github.com/web-animations/web-animations-js)を使う。
 
+<small>※間違ったこと話してたら[@GeckoTang](http://twitter.com/GeckoTang)に教えてください</small>
+
 ---
 
 ## とりあえず使う
