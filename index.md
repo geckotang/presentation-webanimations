@@ -19,7 +19,7 @@
 
 こんな感じ。
 
-[fiddle](http://jsfiddle.net/68J2J/1/)  
+[デモ](http://jsfiddle.net/68J2J/1/)  
 
 ```javascript
 var block = document.querySelector('.block');
@@ -53,16 +53,25 @@ animateメソッドの引数について
 
 ## 第一引数
 
-第一引数には、@keyframes的な感じの配列を指定する。
+第一引数には、@keyframes的な感じの配列を指定する。  
+[デモ](http://jsfiddle.net/68J2J/9/)
 
 ```javascript
 element.animate([
-  {cssProperty: value},
-  {
-    cssProperty: value,
-    cssProperty: value
-  },
-  {cssProperty: value}
+    { top: "0", left: "0" },
+    { top: "50px", left: "50px" },
+    { top: "0", left: "100px" }
+], option);
+```
+
+また、@keyframesでいう、アニメーションの中で指定したキーフレームが発生する時間（from,to,%）はoffsetキーを使用する。  
+[デモ](http://jsfiddle.net/68J2J/10/)
+
+```javascript
+element.animate([
+    { top: "0", left: "0" },  //自動的にoffset: 0
+    { top: "50px", left: "50px", offset: 1/10 },
+    { top: "0", left: "100px" }    //自動的にoffset: 1
 ], option);
 ```
 
@@ -128,7 +137,7 @@ element.animate([
 
 3秒後にアラートされる。
 
-[fiddle](http://jsfiddle.net/68J2J/2/)  
+[デモ](http://jsfiddle.net/68J2J/2/)  
 
 ```javascript
 var block = document.querySelector('.block');
@@ -176,7 +185,7 @@ addEventListenerでもよい
 
 キャンセルボタンをクリックするとアニメーションが終了する。  
 
-[fiddle](http://jsfiddle.net/68J2J/3/)  
+[デモ](http://jsfiddle.net/68J2J/3/)  
 
 ```html
 <div class="block"></div>
@@ -207,7 +216,7 @@ cancelすると、アニメーション完了後の状態になる
 
 cancelした時にも、onfinishが呼ばれる。  
 
-[fiddle](http://jsfiddle.net/68J2J/5/)
+[デモ](http://jsfiddle.net/68J2J/5/)
 
 ```javascript
 var block, player;
@@ -236,11 +245,9 @@ document.querySelector('#cancel').addEventListener('click', function(){
 
 ## 色々やってみたリンク
 
-- []()
-- []()
-- []()
-- []()
-- []()
+- [スプライトアニメ](http://jsfiddle.net/simurai/CGmCe/light/)をWeb Animationsで書いてみる[デモ](http://jsfiddle.net/CGmCe/7760/)
+- [endDelay使ってみた](http://jsfiddle.net/68J2J/6/)
+- [offsetを使って細かいアニメーションにしてみた](http://jsfiddle.net/68J2J/7/)
 
 ---
 
